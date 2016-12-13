@@ -12,6 +12,8 @@
 //封装上下拉刷新
 #import "CFCustomHeader.h"
 #import "CFCustomFooter.h"
+//没有数据
+#import "CFNoDataView.h"
 
 #define httpHead @"https://hs.tocet.cn/v1.0"
 
@@ -20,6 +22,7 @@
 @property (nonatomic,strong) AFHTTPSessionManager *manger;
 @property (nonatomic,strong) UITableView *tableview;
 @property (nonatomic,strong) NSMutableArray *dataArr;
+@property (nonatomic,strong) CFNoDataView *noDataView;
 @property (nonatomic,assign) NSUInteger pageNo;
 
 @end
@@ -43,6 +46,17 @@
     return _manger;
 }
 
+-(CFNoDataView *)noDataView
+{
+    if (!_noDataView) {
+        _noDataView = [[CFNoDataView alloc]initWithFrame:self.view.bounds];
+        _noDataView.hidden = YES;
+        [_noDataView.reloadBtn addTarget:self action:@selector(loadNewData) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_noDataView];
+    }
+    return _noDataView;
+}
+
 #pragma mark - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,6 +66,7 @@
     self.tableview.dataSource = self;
     self.tableview.rowHeight = 60;
     [self.view addSubview:self.tableview];
+
     
 //TODO:增加上下拉刷新功能
     CFCustomHeader *customHeader = [CFCustomHeader customHeaderTarget:self selector:@selector(loadNewData)];
@@ -60,7 +75,7 @@
     CFCustomFooter *customFooter = [CFCustomFooter customFooterTarget:self selector:@selector(loadMoreData)];
     self.tableview.mj_footer = customFooter;
 
-    [self.tableview.mj_header beginRefreshing];//MJRefresh
+    [self.tableview.mj_header beginRefreshing];//MJRefresh开始刷新
 
 }
 
@@ -72,6 +87,8 @@
 #pragma mark - 发送请求
 -(void)loadNewData
 {
+    //无网络图片隐藏
+    self.noDataView.hidden = YES;
     [CFSendNet cancelAFNManger:self.manger];
     _pageNo = 1;
     //1.视图懒加载请求管理者
@@ -93,6 +110,9 @@
             _dataArr = [NSMutableArray array];
             _dataArr = [CFDataModel dataModelWithArray:responseObject[@"data"]];
        
+            //没有数据视图
+            self.noDataView.hidden = !(_dataArr.count == 0);
+            
             [self.tableview reloadData];
             
         }else{
@@ -104,7 +124,7 @@
         //结束刷新
         [self.tableview.mj_header endRefreshing];
         //更换界面
-        NSLog(@"%@",error);
+        [self noNetWork];
     }];
 }
 
@@ -143,8 +163,14 @@
         [self.tableview.mj_footer endRefreshing];
         --_pageNo;
         //更换界面
-        NSLog(@"%@",error);
+        [self noNetWork];
     }];
+}
+
+#pragma mark - 没有网络
+-(void)noNetWork{
+    if (_dataArr.count) return;
+    self.noDataView.hidden = NO;
 }
 
 

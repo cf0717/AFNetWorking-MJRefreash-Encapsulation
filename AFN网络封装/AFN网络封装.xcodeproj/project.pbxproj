@@ -23,6 +23,7 @@
 		F633BF201DDABC3E003EC1FF /* CFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F633BF191DDABC3E003EC1FF /* CFDataModel.m */; };
 		F633BF211DDABC3E003EC1FF /* CFSendNet.m in Sources */ = {isa = PBXBuildFile; fileRef = F633BF1C1DDABC3E003EC1FF /* CFSendNet.m */; };
 		F633BF221DDABC3E003EC1FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F633BF1F1DDABC3E003EC1FF /* ViewController.m */; };
+		F68D58D81DFFA14000F92F63 /* CFNoDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = F68D58D71DFFA14000F92F63 /* CFNoDataView.m */; };
 		F6B1DF761DDAF29600D22AE8 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B1DF4A1DDAF29600D22AE8 /* MJRefreshAutoFooter.m */; };
 		F6B1DF771DDAF29600D22AE8 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B1DF4C1DDAF29600D22AE8 /* MJRefreshBackFooter.m */; };
 		F6B1DF781DDAF29600D22AE8 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B1DF4E1DDAF29600D22AE8 /* MJRefreshComponent.m */; };
@@ -98,6 +99,8 @@
 		F633BF1C1DDABC3E003EC1FF /* CFSendNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFSendNet.m; sourceTree = "<group>"; };
 		F633BF1E1DDABC3E003EC1FF /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F633BF1F1DDABC3E003EC1FF /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F68D58D61DFFA14000F92F63 /* CFNoDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFNoDataView.h; sourceTree = "<group>"; };
+		F68D58D71DFFA14000F92F63 /* CFNoDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFNoDataView.m; sourceTree = "<group>"; };
 		F6B1DF491DDAF29600D22AE8 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		F6B1DF4A1DDAF29600D22AE8 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		F6B1DF4B1DDAF29600D22AE8 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -272,6 +275,8 @@
 				F6B1DF941DDAFB9300D22AE8 /* CFCustomHeader.m */,
 				F6B1DF961DDAFD1800D22AE8 /* CFCustomFooter.h */,
 				F6B1DF971DDAFD1800D22AE8 /* CFCustomFooter.m */,
+				F68D58D61DFFA14000F92F63 /* CFNoDataView.h */,
+				F68D58D71DFFA14000F92F63 /* CFNoDataView.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -520,6 +525,7 @@
 				F6B1DF891DDAF29600D22AE8 /* UIView+MJExtension.m in Sources */,
 				F633BF211DDABC3E003EC1FF /* CFSendNet.m in Sources */,
 				F6B1DF7B1DDAF29600D22AE8 /* MJRefreshAutoGifFooter.m in Sources */,
+				F68D58D81DFFA14000F92F63 /* CFNoDataView.m in Sources */,
 				F6B1DF771DDAF29600D22AE8 /* MJRefreshBackFooter.m in Sources */,
 				F6B1DF811DDAF29600D22AE8 /* MJRefreshGifHeader.m in Sources */,
 				F6B1DF7E1DDAF29600D22AE8 /* MJRefreshBackGifFooter.m in Sources */,

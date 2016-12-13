@@ -27,6 +27,9 @@
 @property (nonatomic,copy) NSString *timeStr;
 
 //返回模型
+-(instancetype)initWithDict:(NSDictionary *)dict;
+
+//返回模型
 +(instancetype)dataModelWithDict:(NSDictionary *)dict;
 
 //返回数组
